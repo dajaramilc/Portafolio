@@ -42,21 +42,12 @@ export const metadata: Metadata = {
     description:
       "Backend Developer specialized in Python, FastAPI, and AI integrations. Available for freelance.",
     siteName: "Diego Jaramillo Portfolio",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Diego Jaramillo — Backend Developer",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Diego Jaramillo — Backend Developer & AI Integration Specialist",
     description:
       "Backend Developer specialized in Python, FastAPI, and AI integrations. Available for freelance.",
-    images: ["/og-image.png"],
   },
   robots: { index: true, follow: true },
 };
