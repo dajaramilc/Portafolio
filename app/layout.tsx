@@ -16,6 +16,7 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://diegojaramillo.netlify.app"),
   title: "Diego Jaramillo — Backend Developer & AI Integration Specialist",
   description:
     "Backend Developer specialized in Python, FastAPI, and AI integrations. Available for freelance projects. WhatsApp chatbots, REST APIs, OpenAI/Claude integrations.",
