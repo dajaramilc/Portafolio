@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";
+import ParticleField from "@/components/ParticleField";
 
 const techBadges = [
   "Python", "FastAPI", "Node.js", "PostgreSQL", "MongoDB", "OpenAI", "Claude API",
@@ -27,6 +28,9 @@ export default function Hero() {
     >
       {/* Dot grid */}
       <div className="absolute inset-0 dot-grid" />
+
+      {/* Floating particles */}
+      <ParticleField />
 
       {/* Bottom fade */}
       <div
