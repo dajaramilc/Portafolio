@@ -2,9 +2,9 @@
 
 Personal portfolio website built with Next.js 16, Tailwind CSS v4, and Framer Motion. Showcases my work as a Backend Developer & AI Integration Specialist.
 
-**Live site:** _coming soon_
+**Live site:** [https://diegojaramillo.netlify.app/
 
----
+](https://diegojaramillo.netlify.app/)---
 
 ## Stack
 
