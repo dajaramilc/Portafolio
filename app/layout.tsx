@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, DM_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -55,7 +56,19 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${dmMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        {/* Asistente de IKONICO AI. El widget crea su propio iframe flotante;
+            el dominio de esta pagina viaja como dato al backend, que solo
+            responde si esta en la lista autorizada de la organizacion.
+            El id va como data-org-id: es lo que lee widget.js. */}
+        <Script
+          id="ikonico-chat-script"
+          src="https://ikonico-ai.pages.dev/widget.js"
+          data-org-id="56bf664d-c180-4462-a530-837973e0a1a5"
+          strategy="afterInteractive"
+        />
+      </body>
     </html>
   );
 }
