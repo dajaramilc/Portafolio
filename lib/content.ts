@@ -138,6 +138,7 @@ export interface Copy {
     emailPlaceholder: string;
     typeLabel: string;
     typePlaceholder: string;
+    typeRequired: string;
     types: string[];
     messageLabel: string;
     messagePlaceholder: string;
@@ -481,13 +482,14 @@ const es: Copy = {
   },
   contact: {
     heading: "Cuéntame qué necesitas",
-    lead: "Escribe lo que quieres construir. Contesto el mismo día.",
+    lead: "Escribe lo que quieres construir. Te contacto lo más pronto posible.",
     nameLabel: "Nombre",
     namePlaceholder: "Tu nombre",
     emailLabel: "Correo",
     emailPlaceholder: "tu@correo.com",
     typeLabel: "Qué necesitas",
     typePlaceholder: "Elige una opción…",
+    typeRequired: "Elige qué necesitas antes de enviar.",
     types: [
       "Asistente de IA por WhatsApp",
       "Sistema completo, de cero a producción",
@@ -503,7 +505,7 @@ const es: Copy = {
     send: "Enviar mensaje",
     sending: "Enviando…",
     sentHeading: "Mensaje enviado",
-    sentBody: "Te contesto hoy mismo al correo que dejaste.",
+    sentBody: "Te contacto lo más pronto posible al correo que dejaste.",
     errorHeading: "No salió",
     errorBody:
       "El envío falló. Escríbeme directo a diegojaramillocalderon@gmail.com y lo resolvemos por ahí.",
@@ -863,13 +865,14 @@ const en: Copy = {
   },
   contact: {
     heading: "Tell me what you need",
-    lead: "Write what you want built. I answer the same day.",
+    lead: "Write what you want built. I'll get back to you as soon as possible.",
     nameLabel: "Name",
     namePlaceholder: "Your name",
     emailLabel: "Email",
     emailPlaceholder: "you@email.com",
     typeLabel: "What you need",
     typePlaceholder: "Pick one…",
+    typeRequired: "Pick what you need before sending.",
     types: [
       "AI assistant on WhatsApp",
       "A whole system, zero to production",
@@ -885,7 +888,7 @@ const en: Copy = {
     send: "Send message",
     sending: "Sending…",
     sentHeading: "Message sent",
-    sentBody: "I will answer today, at the address you left.",
+    sentBody: "I'll get back to you as soon as possible, at the address you left.",
     errorHeading: "That did not go through",
     errorBody:
       "The send failed. Write to me directly at diegojaramillocalderon@gmail.com and we will sort it there.",

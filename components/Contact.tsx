@@ -3,6 +3,7 @@
 import { useRef, useState, type FormEvent } from "react";
 import { CheckCircle2, AlertTriangle } from "lucide-react";
 import Section from "@/components/Section";
+import SelectField from "@/components/SelectField";
 import { SPECTRUM } from "@/lib/content";
 import { useLang } from "@/components/LanguageProvider";
 
@@ -159,30 +160,14 @@ export default function Contact() {
                 </label>
               </div>
 
-              <label className="block">
-                <span
-                  className="engraved mb-1.5 block text-[0.78rem]"
-                  style={{ color: "var(--ink-mute)" }}
-                >
-                  {c.typeLabel}
-                </span>
-                <select
-                  name="project_type"
-                  required
-                  defaultValue=""
-                  disabled={status === "sending"}
-                  className="field-input cursor-pointer"
-                >
-                  <option value="" disabled>
-                    {c.typePlaceholder}
-                  </option>
-                  {c.types.map((type) => (
-                    <option key={type} value={type}>
-                      {type}
-                    </option>
-                  ))}
-                </select>
-              </label>
+              <SelectField
+                name="project_type"
+                label={c.typeLabel}
+                placeholder={c.typePlaceholder}
+                options={c.types}
+                requiredMessage={c.typeRequired}
+                disabled={status === "sending"}
+              />
 
               <label className="block">
                 <span
