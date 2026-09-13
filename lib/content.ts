@@ -397,7 +397,6 @@ const es: Copy = {
         wavelength: null,
         title: "IA y machine learning",
         items: [
-          "Gemini, Claude, Codex, Hermes, OpenCode, Kimi y más",
           "PyTorch",
           "RAG sobre embeddings de 768 dimensiones",
           "Tool calling y reglas de comportamiento",
@@ -421,7 +420,7 @@ const es: Copy = {
         wavelength: null,
         title: "Agentes y toolchain",
         items: [
-          "Claude Code como entorno de trabajo",
+          "Claude Code, Codex, Gemini, Hermes, OpenCode, Kimi y más como entornos de trabajo",
           "Servidores MCP propios y de terceros",
           "Skills y hooks",
           "Subagentes y orquestación multi-CLI",
@@ -780,7 +779,6 @@ const en: Copy = {
         wavelength: null,
         title: "AI and machine learning",
         items: [
-          "Gemini, Claude, Codex, Hermes, OpenCode, Kimi, and more",
           "PyTorch",
           "RAG over 768-dimension embeddings",
           "Tool calling and behavior-rule systems",
@@ -804,7 +802,7 @@ const en: Copy = {
         wavelength: null,
         title: "Agents and toolchain",
         items: [
-          "Claude Code as a working environment",
+          "Claude Code, Codex, Gemini, Hermes, OpenCode, Kimi, and more as working environments",
           "MCP servers, mine and third-party",
           "Skills and hooks",
           "Subagents and multi-CLI orchestration",
