@@ -43,16 +43,16 @@ He leads rather than executes tickets: he chooses the architecture, decides what
 - **The site copy never mentions the embeddable web chat** (confirmed by Diego 2026-09-13). The IKONICO AI chat widget still loads from `app/layout.tsx` via `next/script`, but Diego plans to remove it, so no claim, section, or capability may depend on it. While it remains, its script `id` (`ikonico-chat-script`) is load-bearing — see the README.
 - Must stay fast and accessible: keyboard focus visible, reduced motion respected, readable contrast, responsive to phone width.
 
-**Diego's current capability inventory** (confirmed 2026-09-12; this replaces the stale list the old site shipped):
+**Diego's current capability inventory** (confirmed 2026-09-12, extended 2026-09-13; this replaces the stale list the old site shipped):
 
 - *Systems he owns end to end:* NestJS 10 in strict TypeScript, FastAPI and Flask in Python, Express in Node. Architecture, delivery, and the production on-call for them.
 - *Data:* PostgreSQL with pgvector, multi-tenant row-level security through a dedicated database role, Supabase, MongoDB Atlas including Vector Search, async SQLAlchemy 2.x.
-- *AI engineering:* Gemini 2.5 Flash and Flash-Lite, the Claude API, retrieval-augmented generation over 768-dimension embeddings, tool and function calling, behavior-rule prompt systems with anti prompt-injection, sentiment and summarization passes, local embedding inference with `@xenova/transformers` to remove per-query API cost.
-- *The Claude toolchain, at an operator level:* Claude Code, Model Context Protocol servers, Skills, hooks, subagents, and multi-CLI orchestration across agents. This is how projects of this size get run, not a side interest.
-- *Channels and integrations:* WhatsApp Cloud API end to end — webhooks with HMAC-SHA256 verification, outbound sending, message templates, System User tokens — plus the Meta Graph API and Google Calendar OAuth.
+- *AI engineering:* works across Gemini, Claude, Codex, Hermes, OpenCode, Kimi and other models and agents; PyTorch; retrieval-augmented generation over 768-dimension embeddings, tool and function calling, behavior-rule prompt systems with anti prompt-injection, sentiment and summarization passes, local embedding inference with `@xenova/transformers` to remove per-query API cost.
+- *The Claude toolchain, at an operator level:* Claude Code, Model Context Protocol servers, Skills, hooks, subagents, multi-CLI orchestration across agents, and Obsidian as the knowledge base for projects. This is how projects of this size get run, not a side interest.
+- *Channels and integrations:* WhatsApp Cloud API end to end — webhooks with HMAC-SHA256 verification, outbound sending, message templates, System User tokens — plus Evolution API, the Meta Graph API, Google Calendar OAuth, and n8n automation workflows.
 - *Security:* tenant isolation under RLS, fail-closed webhook signature verification, single-use OAuth state nonces, login lockout, per-route rate limiting, Helmet CSP, MIME allowlist with magic-byte validation, per-tenant media quotas.
 - *Machine learning:* member of a machine-learning research seedbed (*semillero*) at Universidad EAFIT. **Open fact — the seedbed's exact name and focus still need to come from Diego; do not invent them.**
-- *Delivery:* Jest and pytest suites, strict TypeScript, Railway, Cloudflare Pages, Netlify, Docker, Git.
+- *Delivery:* CI/CD pipelines, Docker and Kubernetes, Jest and pytest suites, strict TypeScript, Railway, Cloudflare Pages, Netlify, Git.
 
 **Deliberately retired from the site.** The old portfolio led with GPT-4, DALL·E, GPT-3.5, "LangChain basics" and "Docker basics". Those model names are obsolete and the word "basics" misdescribes the current level. GPT-3.5 and DALL·E survive in exactly one place — the FarmWay project description, where they are historical fact about what that 2025 project used — and nowhere else.
 
