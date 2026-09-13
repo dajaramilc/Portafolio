@@ -1,61 +1,430 @@
 @import "tailwindcss";
 
+/* ══════════════════════════════════════════════════════════════════════
+   Banco óptico.
+
+   El sitio es una mesa de laboratorio: un haz entra, cruza vidrio, se
+   dispersa, y cada longitud de onda cae en un detector rotulado.
+
+   Las seis longitudes de onda son leyenda, no adorno. Cada una está
+   amarrada a un significado y no se usa para otra cosa en ningún lado.
+   Si algo va de amarillo es porque habla de recuperar conocimiento.
+   ══════════════════════════════════════════════════════════════════════ */
+
 @theme {
-  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
-  --font-mono: var(--font-dm-mono), "DM Mono", "Courier New", monospace;
+  --font-sans: var(--font-archivo), "Archivo", system-ui, sans-serif;
+  --font-mono: var(--font-martian), "Martian Mono", ui-monospace, monospace;
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+:root {
+  /* Mesa y placas: aluminio anodizado, no negro genérico. */
+  --bench: #05070e;
+  --bench-deep: #03050a;
+  --plate: #0c1220;
+
+  /* Tinta */
+  --ink: #eef2fb;
+  --ink-soft: #9aa8c4;
+  --ink-mute: #7d8aa6;
+
+  /* Las seis longitudes de onda */
+  --w-inbound: #ff4d2e; /* entra: mensaje y canal */
+  --w-recall: #ffb020; /* recupera: conocimiento */
+  --w-resolve: #3ddc8a; /* responde: resuelto */
+  --w-schedule: #37d6f0; /* agenda: calendario */
+  --w-handoff: #6e7bff; /* humano: entrega */
+  --w-isolate: #b15cff; /* aísla: tenant y seguridad */
+
+  /* Rieles y grabados */
+  --rule: rgba(154, 168, 196, 0.14);
+  --rule-soft: rgba(154, 168, 196, 0.07);
+
+  --shell: 78rem;
+
+  /* Seguimiento del puntero sobre el vidrio (lo escribe el JS). */
+  --mx: 50%;
+  --my: 0%;
 }
 
-@keyframes wave {
-  0%, 100% { transform: rotate(0deg); }
-  20%  { transform: rotate(-14deg); }
-  40%  { transform: rotate(10deg); }
-  60%  { transform: rotate(-8deg); }
-  80%  { transform: rotate(5deg); }
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
-}
-
-@layer utilities {
-  .animate-fade-up { animation: fadeUp 0.7s ease forwards; }
-  .animate-wave    { animation: wave 1.2s ease-in-out; display: inline-block; }
-
-  .dot-grid {
-    background-image: radial-gradient(
-      circle,
-      rgba(148, 163, 184, 0.07) 1px,
-      transparent 1px
-    );
-    background-size: 32px 32px;
-  }
-}
+/* ── Base ─────────────────────────────────────────────────────────────── */
 
 html {
   scroll-behavior: smooth;
+  /* La barra fija mide 4.25rem; el ancla no debe quedar debajo. */
+  scroll-padding-top: 5.5rem;
+  color-scheme: dark;
 }
 
 body {
-  background-color: #050d1a;
-  color: #f1f5f9;
+  background-color: var(--bench);
+  color: var(--ink);
+  font-feature-settings: "ss01", "cv05";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Nada de overflow-x aquí: en el body, `clip` convierte al header
+     position:fixed en un elemento anclado al body, y la barra se va con
+     el scroll. El desborde horizontal se recorta en la sección que lo
+     produce (el héroe), no globalmente. */
 }
+
+/* Cifras medidas: tabulares siempre, para que las tablas de spec cuadren. */
+.measured {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+}
+
+/* Rótulos grabados en el instrumento: Archivo estrechado, no versalitas. */
+.engraved {
+  font-stretch: 80%;
+  letter-spacing: 0.02em;
+}
+
+/* ── Superficies del navegador ────────────────────────────────────────
+   Selección, cursor, scrollbar y foco vienen con estilos que no
+   pertenecen a ningún sistema de diseño. Se tematizan. */
 
 ::selection {
-  background-color: rgba(34, 211, 238, 0.18);
-  color: #22d3ee;
+  background-color: rgba(238, 242, 251, 0.22);
+  color: #ffffff;
 }
 
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #050d1a; }
+textarea,
+input {
+  caret-color: var(--ink);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bench-deep);
+}
 ::-webkit-scrollbar-thumb {
-  background: rgba(34, 211, 238, 0.18);
-  border-radius: 2px;
+  background: rgba(154, 168, 196, 0.28);
+  border-radius: 99px;
+  border: 3px solid var(--bench-deep);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(154, 168, 196, 0.5);
+}
+html {
+  scrollbar-color: rgba(154, 168, 196, 0.32) var(--bench-deep);
+  scrollbar-width: thin;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Luz blanca ───────────────────────────────────────────────────────
+   El haz antes del prisma. Es el color de la acción del visitante: el
+   botón principal, el foco, el cursor. Los seis colores son lo que el
+   sistema hace con esa acción, y no se prestan para decorar botones. */
+
+.cta-light {
+  background-color: var(--ink);
+  color: var(--bench);
+  box-shadow:
+    inset 0 -1px 0 rgba(5, 7, 14, 0.18),
+    0 12px 32px -18px rgba(238, 242, 251, 0.55);
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+.cta-light:hover {
+  background-color: #ffffff;
+  box-shadow:
+    inset 0 -1px 0 rgba(5, 7, 14, 0.18),
+    0 16px 40px -16px rgba(238, 242, 251, 0.75);
+}
+.cta-light:active {
+  transform: translateY(1px);
+}
+.cta-light:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ── Vidrio ───────────────────────────────────────────────────────────
+   El vidrio necesita algo detrás que refractar; por eso el campo
+   espectral vive debajo y estas placas lo tuercen. No es una tarjeta
+   con blur: tiene canto encendido arriba, canto apagado abajo, y un
+   borde que dispersa color sobre el lado iluminado. */
+
+.glass {
+  position: relative;
+  isolation: isolate;
+  border-radius: 14px;
+  background: linear-gradient(
+    158deg,
+    rgba(255, 255, 255, 0.085) 0%,
+    rgba(255, 255, 255, 0.032) 44%,
+    rgba(255, 255, 255, 0.012) 100%
+  );
+  /* El prefijo va PRIMERO. Con el orden inverso, Lightning CSS (el
+     procesador de Tailwind v4) descarta las dos declaraciones y el vidrio
+     queda sin desenfoque, sin ningún error visible. */
+  -webkit-backdrop-filter: blur(20px) saturate(1.55);
+  backdrop-filter: blur(20px) saturate(1.55);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.26),
+    inset 1px 0 0 rgba(255, 255, 255, 0.06),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04),
+    0 22px 48px -26px rgba(0, 0, 0, 0.9);
+}
+
+/* Canto que dispersa. Toma la longitud de onda de la placa (--w); si la
+   placa no declara ninguna, el canto es luz blanca. */
+.glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    138deg,
+    color-mix(in oklab, var(--w, #ffffff) 92%, transparent) 0%,
+    rgba(255, 255, 255, 0.42) 20%,
+    rgba(255, 255, 255, 0.12) 44%,
+    transparent 68%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Barra superior: el mismo vidrio con un fondo casi opaco. Pasa por encima
+   de botones blancos y texto claro, y ahí un vidrio transparente deja el
+   nombre blanco sobre blanco. */
+.glass-bar {
+  background: linear-gradient(
+    180deg,
+    rgba(5, 7, 14, 0.82) 0%,
+    rgba(5, 7, 14, 0.68) 100%
+  );
+}
+
+/* Reflejo especular que sigue al puntero. */
+.glass-specular::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    42rem 22rem at var(--mx) var(--my),
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.028) 34%,
+    transparent 64%
+  );
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.glass-specular:hover::after,
+.glass-specular:focus-within::after {
+  opacity: 1;
+}
+
+/* ── El riel ──────────────────────────────────────────────────────────
+   Un solo eje vertical gobierna el borde izquierdo de cada sección. Es
+   la regla del banco: todo lo que la página afirma cuelga de ella. */
+
+.rail {
+  position: relative;
+}
+.rail::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--rule) 8%,
+    var(--rule) 92%,
+    transparent
+  );
+}
+
+/* Marca de estación: dónde el riel toca una sección. Es una marca, no
+   un color de fondo — el estado se lee por la muesca. */
+.station::before {
+  content: "";
+  position: absolute;
+  left: -3px;
+  top: 0.55em;
+  width: 7px;
+  height: 7px;
+  border-radius: 99px;
+  background: var(--w, var(--ink-mute));
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--w, #fff) 14%, transparent);
+}
+
+/* Regla grabada horizontal, con graduación cada 8px. */
+.graduated {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--rule-soft) 0 1px,
+    transparent 1px 8px
+  );
+  height: 1px;
+}
+
+/* ── Campo espectral ──────────────────────────────────────────────────
+   Lo que el vidrio refracta. Vive detrás de todo, en el héroe. */
+
+.field {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(64px);
+  opacity: 0.5;
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* ── La llegada ───────────────────────────────────────────────────────
+   Un solo momento orquestado: el haz llega y se dispersa, una vez, al
+   cargar. Todo lo demás responde al usuario. */
+
+/* Version para SVG: se dibuja con el trazo, sin recorte. Requiere
+   pathLength="1" y stroke-dasharray="1" en el trazo. */
+@keyframes beam-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes lift {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes flare {
+  from {
+    opacity: 0;
+    transform: scale(0.82);
+  }
+  60% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(2.5rem, -1.75rem, 0);
+  }
+}
+
+.arrive-draw {
+  animation: beam-draw 1.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.arrive-lift {
+  animation: lift 0.72s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.arrive-flare {
+  animation: flare 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.field-drift {
+  animation: drift 19s ease-in-out infinite alternate;
+}
+
+/* ── Movimiento reducido ──────────────────────────────────────────────
+   Nada se anima; todo queda en su estado final y legible. */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .arrive-draw,
+  .arrive-lift,
+  .arrive-flare,
+  .field-drift {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Formularios ──────────────────────────────────────────────────────── */
+
+.field-input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--rule);
+  background-color: rgba(3, 5, 10, 0.55);
+  color: var(--ink);
+  padding: 0.75rem 0.9rem;
+  font-size: 0.9375rem;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease;
+}
+.field-input::placeholder {
+  color: var(--ink-mute);
+}
+.field-input:hover {
+  border-color: rgba(154, 168, 196, 0.24);
+}
+.field-input:focus {
+  outline: none;
+  border-color: rgba(238, 242, 251, 0.5);
+  box-shadow: 0 0 0 3px rgba(238, 242, 251, 0.09);
+  background-color: rgba(3, 5, 10, 0.78);
+}
+.field-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+select.field-input {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' stroke='%237d8aa6' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.95rem center;
+  background-size: 12px 8px;
+}
+select.field-input option {
+  background: var(--plate);
+  color: var(--ink);
 }

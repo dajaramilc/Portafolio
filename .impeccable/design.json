@@ -1,0 +1,548 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-13T05:35:17.308Z",
+  "title": "Design System: Diego Jaramillo",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "primary",
+        "displayName": "White Light",
+        "canonical": "#eef2fb",
+        "oklch": "oklch(96.1% 0.013 266.7)",
+        "tonalRamp": [
+          "#090b11",
+          "#21242a",
+          "#3f4249",
+          "#60636b",
+          "#83868e",
+          "#a7abb3",
+          "#caced6",
+          "#eaeef7"
+        ]
+      },
+      "ink-hot": {
+        "role": "primary",
+        "displayName": "Hot White",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#424242",
+          "#636363",
+          "#868686",
+          "#ababab",
+          "#cecece",
+          "#eeeeee"
+        ]
+      },
+      "w-inbound": {
+        "role": "secondary",
+        "displayName": "Inbound Orange",
+        "canonical": "#ff4d2e",
+        "oklch": "oklch(67.0% 0.219 32.3)",
+        "tonalRamp": [
+          "#200000",
+          "#4a0400",
+          "#7b1604",
+          "#b62000",
+          "#ed3a19",
+          "#fc826b",
+          "#ffbaac",
+          "#fee9e4"
+        ]
+      },
+      "w-recall": {
+        "role": "secondary",
+        "displayName": "Recall Amber",
+        "canonical": "#ffb020",
+        "oklch": "oklch(81.3% 0.165 75.0)",
+        "tonalRamp": [
+          "#140800",
+          "#341f00",
+          "#5b3b00",
+          "#855904",
+          "#b2790d",
+          "#e19b1e",
+          "#fec168",
+          "#feebd2"
+        ]
+      },
+      "w-resolve": {
+        "role": "secondary",
+        "displayName": "Resolve Green",
+        "canonical": "#3ddc8a",
+        "oklch": "oklch(79.4% 0.175 155.6)",
+        "tonalRamp": [
+          "#001004",
+          "#012d16",
+          "#06502d",
+          "#007744",
+          "#07a05d",
+          "#1dca79",
+          "#56ef9b",
+          "#c6ffd9"
+        ]
+      },
+      "w-schedule": {
+        "role": "secondary",
+        "displayName": "Schedule Cyan",
+        "canonical": "#37d6f0",
+        "oklch": "oklch(80.8% 0.130 211.5)",
+        "tonalRamp": [
+          "#000e12",
+          "#002a31",
+          "#004b57",
+          "#04707f",
+          "#0f97aa",
+          "#22bfd7",
+          "#4be4fe",
+          "#cff7ff"
+        ]
+      },
+      "w-handoff": {
+        "role": "secondary",
+        "displayName": "Handoff Indigo",
+        "canonical": "#6e7bff",
+        "oklch": "oklch(64.0% 0.194 275.3)",
+        "tonalRamp": [
+          "#060033",
+          "#19046d",
+          "#2f25a6",
+          "#4a4ece",
+          "#6975f8",
+          "#94a3fb",
+          "#c0cbfe",
+          "#eaeeff"
+        ]
+      },
+      "w-isolate": {
+        "role": "secondary",
+        "displayName": "Isolate Violet",
+        "canonical": "#b15cff",
+        "oklch": "oklch(65.1% 0.234 304.6)",
+        "tonalRamp": [
+          "#140026",
+          "#340156",
+          "#5b0991",
+          "#8323cb",
+          "#a751f4",
+          "#c28efd",
+          "#dbc0fd",
+          "#f3eafe"
+        ]
+      },
+      "bench": {
+        "role": "neutral",
+        "displayName": "Anodized Bench",
+        "canonical": "#05070e",
+        "oklch": "oklch(13.0% 0.017 268.4)",
+        "tonalRamp": [
+          "#080b12",
+          "#20242d",
+          "#3e424c",
+          "#5f636d",
+          "#828691",
+          "#a6abb6",
+          "#c9ced9",
+          "#e9eefa"
+        ]
+      },
+      "bench-deep": {
+        "role": "neutral",
+        "displayName": "Deep Bench",
+        "canonical": "#03050a",
+        "oklch": "oklch(11.5% 0.015 261.3)",
+        "tonalRamp": [
+          "#080b12",
+          "#20242c",
+          "#3e434b",
+          "#5e636c",
+          "#818690",
+          "#a5abb5",
+          "#c8ced8",
+          "#e9eff9"
+        ]
+      },
+      "plate": {
+        "role": "neutral",
+        "displayName": "Plate",
+        "canonical": "#0c1220",
+        "oklch": "oklch(18.4% 0.030 265.8)",
+        "tonalRamp": [
+          "#060b18",
+          "#1d2433",
+          "#3b4253",
+          "#5b6375",
+          "#7d8699",
+          "#a2abbf",
+          "#c4cee2",
+          "#e7efff"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "#9aa8c4",
+        "oklch": "oklch(73.0% 0.044 264.3)",
+        "tonalRamp": [
+          "#030a1d",
+          "#192439",
+          "#37425a",
+          "#57637d",
+          "#7986a1",
+          "#9dabc7",
+          "#c0ceeb",
+          "#e7efff"
+        ]
+      },
+      "ink-mute": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "#7d8aa6",
+        "oklch": "oklch(63.3% 0.045 265.5)",
+        "tonalRamp": [
+          "#040a1e",
+          "#19233a",
+          "#37425b",
+          "#57637d",
+          "#7986a2",
+          "#9dabc8",
+          "#c0ceec",
+          "#e7efff"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "rgba(154, 168, 196, 0.14)",
+        "oklch": "oklch(73.0% 0.044 264.3)",
+        "tonalRamp": [
+          "#030a1d",
+          "#192439",
+          "#37425a",
+          "#57637d",
+          "#7986a1",
+          "#9dabc7",
+          "#c0ceeb",
+          "#e7efff"
+        ]
+      },
+      "rule-soft": {
+        "role": "neutral",
+        "displayName": "Soft Rule",
+        "canonical": "rgba(154, 168, 196, 0.07)",
+        "oklch": "oklch(73.0% 0.044 264.3)",
+        "tonalRamp": [
+          "#030a1d",
+          "#192439",
+          "#37425a",
+          "#57637d",
+          "#7986a1",
+          "#9dabc7",
+          "#c0ceeb",
+          "#e7efff"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The single hero claim. Steps 2.5rem (base), 3.2rem (sm), 3.6rem (lg); balanced wrap, max 47rem."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings on the rail. 1.75rem below sm, 2.15rem from sm. The flagship system name runs 1.9rem to 2.4rem at -0.03em."
+      },
+      "title": {
+        "displayName": "Title (engraved)",
+        "purpose": "Project names at 1.3rem; plate, capability and subsection titles engraved at 0.88rem to 1rem."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Paragraphs at 0.9rem to 1rem, line-height 1.6 to 1.7, Soft Ink, capped at 58ch to 68ch."
+      },
+      "label": {
+        "displayName": "Engraved Label",
+        "purpose": "Form labels, spec-table terms, channel names. Archivo at font-stretch 80%, +0.02em, sentence case."
+      },
+      "measured": {
+        "displayName": "Measured Value",
+        "purpose": "Martian Mono with tabular numerals, only for values starting with a digit (isMeasured in lib/content.ts)."
+      }
+    },
+    "shadows": [
+      {
+        "name": "glass-body",
+        "value": "inset 0 1px 0 rgba(255,255,255,0.26), inset 1px 0 0 rgba(255,255,255,0.06), inset 0 -1px 0 rgba(255,255,255,0.04), 0 22px 48px -26px rgba(0,0,0,0.9)",
+        "purpose": "Every optical glass plate: lit top edge, dim bottom edge, long soft drop."
+      },
+      {
+        "name": "white-light-rest",
+        "value": "inset 0 -1px 0 rgba(5,7,14,0.18), 0 12px 32px -18px rgba(238,242,251,0.55)",
+        "purpose": "Primary action at rest."
+      },
+      {
+        "name": "white-light-hover",
+        "value": "inset 0 -1px 0 rgba(5,7,14,0.18), 0 16px 40px -16px rgba(238,242,251,0.75)",
+        "purpose": "Primary action on hover."
+      },
+      {
+        "name": "field-focus",
+        "value": "0 0 0 3px rgba(238,242,251,0.09)",
+        "purpose": "Focused input halo; white light, never a wavelength."
+      },
+      {
+        "name": "detector-glow",
+        "value": "0 0 10px var(--w)",
+        "purpose": "Glow on a legend dot, 10px to 14px; paired with a 4px bench ring where the dot sits on a line."
+      },
+      {
+        "name": "station-halo",
+        "value": "0 0 0 3px color-mix(in oklab, var(--w, #fff) 14%, transparent)",
+        "purpose": "Halo around a 7px station mark on the rail."
+      }
+    ],
+    "materials": [
+      {
+        "name": "glass",
+        "value": "background: linear-gradient(158deg, rgba(255,255,255,0.085) 0%, rgba(255,255,255,0.032) 44%, rgba(255,255,255,0.012) 100%); -webkit-backdrop-filter: blur(20px) saturate(1.55); backdrop-filter: blur(20px) saturate(1.55); border-radius: 14px",
+        "purpose": "The only raised material. Prefixed backdrop-filter MUST come first: in reverse order Lightning CSS emits only the prefixed form and Chrome drops the blur."
+      },
+      {
+        "name": "glass-edge",
+        "value": "1px masked border: linear-gradient(138deg, color-mix(in oklab, var(--w, #ffffff) 92%, transparent) 0%, rgba(255,255,255,0.42) 20%, rgba(255,255,255,0.12) 44%, transparent 68%)",
+        "purpose": "Dispersing border in the plate's wavelength (--w), white when the plate has none."
+      },
+      {
+        "name": "glass-bar",
+        "value": "linear-gradient(180deg, rgba(5,7,14,0.82) 0%, rgba(5,7,14,0.68) 100%)",
+        "purpose": "Near-opaque tint for the fixed navigation and mobile drawer so light content beneath never swallows nav text."
+      },
+      {
+        "name": "glass-specular",
+        "value": "radial-gradient(42rem 22rem at var(--mx) var(--my), rgba(255,255,255,0.1), rgba(255,255,255,0.028) 34%, transparent 64%)",
+        "purpose": "Pointer-following highlight, fades in over 0.45s on hover and focus-within."
+      },
+      {
+        "name": "spectral-field",
+        "value": "radial-gradient(circle, <wavelength> at 24-30% alpha, transparent 66-70%); filter: blur(64px); opacity: 0.5",
+        "purpose": "What the hero glass refracts. Hero only."
+      },
+      {
+        "name": "rail",
+        "value": "1px wide, linear-gradient(180deg, transparent, var(--rule) 8%, var(--rule) 92%, transparent)",
+        "purpose": "The single vertical axis at the left edge of every section."
+      },
+      {
+        "name": "graduated",
+        "value": "repeating-linear-gradient(to right, var(--rule-soft) 0 1px, transparent 1px 8px); height: 1px",
+        "purpose": "Engraved rule with a tick every 8px."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-arrive",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All arrival and pointer refraction motion."
+      },
+      {
+        "name": "ease-state",
+        "value": "ease 0.18s-0.3s",
+        "purpose": "Hover, focus, detent and nav state transitions."
+      },
+      {
+        "name": "arrive-lift",
+        "value": "lift 0.72s ease-arrive both (opacity 0, translateY(14px) to none); delays 0, 0.1s, 0.18s, 0.26s",
+        "purpose": "Hero claim, nameplate, intro, actions."
+      },
+      {
+        "name": "arrive-draw",
+        "value": "beam-draw 1.05s ease-arrive both (stroke-dashoffset 1 to 0, pathLength=1)",
+        "purpose": "The inbound beam."
+      },
+      {
+        "name": "arrive-flare",
+        "value": "flare 0.9s ease-arrive both (opacity 0, scale(0.82) to none); prism 0.4s, rays 0.55s, plates 0.62s + 0.11s each",
+        "purpose": "Prism, rays, detector plates. Never on an element that also carries a layout or interaction transform; wrap instead."
+      },
+      {
+        "name": "refract",
+        "value": "transform 0.5s ease-arrive; prism rotate(var(--refract) * 5deg), plates translateY(var(--refract) * (index-1) * 5px)",
+        "purpose": "Pointer response on the hero bench."
+      },
+      {
+        "name": "field-drift",
+        "value": "drift 19s ease-in-out infinite alternate (translate3d 2.5rem, -1.75rem)",
+        "purpose": "Ambient drift of hero spectral field."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "@media (prefers-reduced-motion: reduce): animation none, opacity 1, transform none, stroke-dashoffset 0; transitions 0.01ms; scroll-behavior auto",
+        "purpose": "Everything lands in its final legible state."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button (White Light)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The visitor's action. Imperative copy naming the outcome.",
+      "html": "<a class=\"ds-cta-light\" href=\"#contact\">Escríbeme</a>",
+      "css": ".ds-cta-light{display:inline-block;background:var(--ink,#eef2fb);color:var(--bench,#05070e);border-radius:9999px;padding:.75rem 1.5rem;font:600 .875rem/1.5 Archivo,system-ui,sans-serif;text-decoration:none;box-shadow:inset 0 -1px 0 rgba(5,7,14,.18),0 12px 32px -18px rgba(238,242,251,.55);transition:background-color .2s ease,box-shadow .2s ease,transform .2s ease}.ds-cta-light:hover{background:#fff;box-shadow:inset 0 -1px 0 rgba(5,7,14,.18),0 16px 40px -16px rgba(238,242,251,.75)}.ds-cta-light:active{transform:translateY(1px)}.ds-cta-light:focus-visible{outline:2px solid var(--ink,#eef2fb);outline-offset:3px}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action: Rule border, White Light text, faint wash on hover.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#system\">Ver el sistema</a>",
+      "css": ".ds-btn-ghost{display:inline-block;border:1px solid var(--rule,rgba(154,168,196,.14));color:var(--ink,#eef2fb);background:transparent;border-radius:9999px;padding:.75rem 1.5rem;font:600 .875rem/1.5 Archivo,system-ui,sans-serif;text-decoration:none;transition:background-color .2s ease}.ds-btn-ghost:hover{background:rgba(255,255,255,.06)}.ds-btn-ghost:focus-visible{outline:2px solid var(--ink,#eef2fb);outline-offset:3px}"
+    },
+    {
+      "name": "Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Engraved label over a dark field; focus brightens in white light.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Correo</span><input class=\"ds-field-input\" type=\"email\" placeholder=\"tu@empresa.com\"></label>",
+      "css": ".ds-field{display:block;max-width:22rem}.ds-field-label{display:block;margin-bottom:.375rem;font:400 .78rem/1.5 Archivo,system-ui,sans-serif;font-stretch:80%;letter-spacing:.02em;color:var(--ink-mute,#7d8aa6)}.ds-field-input{width:100%;box-sizing:border-box;border-radius:10px;border:1px solid var(--rule,rgba(154,168,196,.14));background:rgba(3,5,10,.55);color:var(--ink,#eef2fb);caret-color:var(--ink,#eef2fb);padding:.75rem .9rem;font:400 .9375rem Archivo,system-ui,sans-serif;transition:border-color .18s ease,box-shadow .18s ease,background-color .18s ease}.ds-field-input::placeholder{color:var(--ink-mute,#7d8aa6)}.ds-field-input:hover{border-color:rgba(154,168,196,.24)}.ds-field-input:focus{outline:none;border-color:rgba(238,242,251,.5);box-shadow:0 0 0 3px rgba(238,242,251,.09);background:rgba(3,5,10,.78)}"
+    },
+    {
+      "name": "Navigation Bar",
+      "kind": "nav",
+      "refersTo": "nav-bar",
+      "description": "Opaque glass bar with spectral nameplate, links, ES|EN detent and primary action.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-name\" href=\"#home\"><span class=\"ds-nav-bar\"></span>Diego Jaramillo</a><a class=\"ds-nav-link\" href=\"#system\">Sistema</a><a class=\"ds-nav-link\" href=\"#work\">Trabajo</a><div class=\"ds-detent\" role=\"group\"><span class=\"ds-detent-lit\"></span><button class=\"ds-detent-opt on\" aria-pressed=\"true\">es</button><button class=\"ds-detent-opt\" aria-pressed=\"false\">en</button></div><a class=\"ds-nav-cta\" href=\"#contact\">Escríbeme</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:1.25rem;padding:.875rem 2rem;background:linear-gradient(180deg,rgba(5,7,14,.82),rgba(5,7,14,.68));-webkit-backdrop-filter:blur(20px) saturate(1.55);backdrop-filter:blur(20px) saturate(1.55);border-bottom:1px solid rgba(154,168,196,.07);font-family:Archivo,system-ui,sans-serif}.ds-nav-name{display:flex;align-items:center;gap:.625rem;color:#eef2fb;font-weight:600;font-size:.875rem;font-stretch:80%;text-decoration:none;margin-right:auto}.ds-nav-bar{width:3px;height:1rem;border-radius:9999px;background:linear-gradient(180deg,#ff4d2e 0 16.67%,#ffb020 16.67% 33.33%,#3ddc8a 33.33% 50%,#37d6f0 50% 66.67%,#6e7bff 66.67% 83.33%,#b15cff 83.33% 100%)}.ds-nav-link{font-size:.82rem;color:#9aa8c4;text-decoration:none;transition:color .2s}.ds-nav-link:hover{color:#eef2fb}.ds-detent{position:relative;display:flex;padding:2px;border-radius:9999px;border:1px solid rgba(154,168,196,.14);background:rgba(3,5,10,.5)}.ds-detent-lit{position:absolute;top:2px;bottom:2px;left:2px;width:calc(50% - 2px);border-radius:9999px;background:rgba(238,242,251,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.22)}.ds-detent-opt{position:relative;width:2.5rem;padding:.25rem 0;border:0;background:none;border-radius:9999px;font:600 .74rem Archivo,system-ui,sans-serif;font-stretch:80%;letter-spacing:.06em;text-transform:uppercase;color:#7d8aa6;cursor:pointer}.ds-detent-opt.on{color:#eef2fb}.ds-detent-opt:focus-visible,.ds-nav-link:focus-visible,.ds-nav-cta:focus-visible{outline:2px solid #eef2fb;outline-offset:3px;border-radius:4px}.ds-nav-cta{background:#eef2fb;color:#05070e;border-radius:9999px;padding:.5rem 1rem;font-size:.82rem;font-weight:600;text-decoration:none;transition:background-color .2s}.ds-nav-cta:hover{background:#fff}"
+    },
+    {
+      "name": "Glass Detector Plate",
+      "kind": "card",
+      "refersTo": "glass-plate",
+      "description": "Optical glass plate whose edge and dot carry its legend wavelength (--w).",
+      "html": "<div class=\"ds-glass\" style=\"--w:#37d6f0\"><div class=\"ds-glass-head\"><span class=\"ds-glass-dot\"></span><span class=\"ds-glass-title\">Agenda con disponibilidad real</span></div><p class=\"ds-glass-body\">Reserva contra el calendario del negocio, en su zona horaria.</p></div>",
+      "css": ".ds-glass{position:relative;isolation:isolate;max-width:20rem;padding:.75rem 1rem;border-radius:14px;color:#eef2fb;font-family:Archivo,system-ui,sans-serif;background:linear-gradient(158deg,rgba(255,255,255,.085) 0%,rgba(255,255,255,.032) 44%,rgba(255,255,255,.012) 100%),#05070e;-webkit-backdrop-filter:blur(20px) saturate(1.55);backdrop-filter:blur(20px) saturate(1.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.26),inset 1px 0 0 rgba(255,255,255,.06),inset 0 -1px 0 rgba(255,255,255,.04),0 22px 48px -26px rgba(0,0,0,.9)}.ds-glass::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(138deg,color-mix(in oklab,var(--w,#fff) 92%,transparent) 0%,rgba(255,255,255,.42) 20%,rgba(255,255,255,.12) 44%,transparent 68%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;pointer-events:none}.ds-glass-head{display:flex;align-items:center;gap:.5rem}.ds-glass-dot{width:6px;height:6px;border-radius:9999px;background:var(--w);box-shadow:0 0 10px var(--w)}.ds-glass-title{font-size:.88rem;font-weight:600;font-stretch:80%;letter-spacing:.02em}.ds-glass-body{margin:.375rem 0 0;font-size:.8rem;line-height:1.5;color:#9aa8c4}"
+    },
+    {
+      "name": "Specification Table",
+      "kind": "custom",
+      "description": "Ruled definition rows; values starting with a digit set in Martian Mono.",
+      "html": "<dl class=\"ds-spec\"><div><dt>Commits</dt><dd class=\"ds-measured\">167</dd></div><div><dt>Tests</dt><dd class=\"ds-measured\">422</dd></div><div><dt>Embeddings</dt><dd class=\"ds-measured\">768 dim</dd></div><div><dt>Base de datos</dt><dd>PostgreSQL + pgvector</dd></div></dl>",
+      "css": ".ds-spec{margin:0;max-width:17rem;font-family:Archivo,system-ui,sans-serif}.ds-spec>div{display:flex;align-items:baseline;justify-content:space-between;gap:.75rem;padding:.375rem 0;border-top:1px solid rgba(154,168,196,.07)}.ds-spec>div:first-child{border-top:0}.ds-spec dt{font-size:.78rem;color:#7d8aa6}.ds-spec dd{margin:0;text-align:right;font-size:.84rem;color:#eef2fb}.ds-spec dd.ds-measured{font-family:'Martian Mono',ui-monospace,monospace;font-size:.76rem;font-variant-numeric:tabular-nums;letter-spacing:-.03em}"
+    },
+    {
+      "name": "Rail Section Heading",
+      "kind": "custom",
+      "description": "The single vertical rail with a station mark where it meets a section heading.",
+      "html": "<div class=\"ds-rail\"><header class=\"ds-rail-head\"><span class=\"ds-station\"></span><h2>Capacidades</h2><p>Lo que construyo y dónde corre.</p></header><div class=\"ds-rail-item\" style=\"--w:#b15cff\"><h3 style=\"color:#b15cff\">Seguridad</h3></div><div class=\"ds-rail-item\"><h3>Entrega</h3></div></div>",
+      "css": ".ds-rail{position:relative;padding-left:2.25rem;font-family:Archivo,system-ui,sans-serif;color:#eef2fb}.ds-rail::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,rgba(154,168,196,.14) 8%,rgba(154,168,196,.14) 92%,transparent)}.ds-rail-head{position:relative;margin-bottom:2rem}.ds-station{position:absolute;top:1rem;left:-2.25rem;width:7px;height:7px;transform:translateX(-50%);border-radius:9999px;background:#9aa8c4;box-shadow:0 0 0 3px #05070e,0 0 0 4px rgba(154,168,196,.14)}.ds-rail-head h2{margin:0;font-size:2.15rem;font-weight:600;letter-spacing:-.025em}.ds-rail-head p{margin:.75rem 0 0;font-size:.95rem;color:#9aa8c4}.ds-rail-item{position:relative;padding-left:1.25rem;margin-top:1.25rem}.ds-rail-item::before{content:'';position:absolute;left:-3px;top:.55em;width:7px;height:7px;border-radius:99px;background:var(--w,#7d8aa6);box-shadow:0 0 0 3px color-mix(in oklab,var(--w,#fff) 14%,transparent)}.ds-rail-item h3{margin:0;font-size:1rem;font-weight:600;font-stretch:80%;letter-spacing:.02em}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Optical Bench",
+    "overview": "The site is a laboratory bench in the dark. One beam of white light enters, crosses glass, disperses, and each wavelength lands on a labeled detector. Every visual device is a piece of that apparatus: anodized black bench, optical glass as the only raised material, a single vertical rail from which the page hangs, engraved labels, and measured values set like instrument readouts. Nothing is ornament; a color, a mark, or a typeface change always states something.\n\nDensity is instrument-like rather than editorial: tight engraved labels, ruled specification tables, hairline dividers, and generous vertical rhythm between sections. Rank is carried by area, not by heading size: the flagship system takes a whole raised section with glass plates, while other projects sit as ruled rows on the bench. There is one orchestrated moment of motion, the arrival of the beam on page load; everything after that responds to the visitor.\n\nThe system rejects the dev-portfolio arrangement of equal skill cards, equal project cards and tag soup. It also rejects color as decoration: the spectrum is a legend.",
+    "keyCharacteristics": [
+      "Dark anodized bench with a one-step-deeper tone for raised sections.",
+      "Six spectral wavelengths, each bound to exactly one meaning site-wide.",
+      "White light (ink) is the only color of interaction.",
+      "Optical glass: blurred, saturated, lit top edge, dispersing chromatic border.",
+      "Archivo for words, narrowed to 80% width for engraved labels; Martian Mono only for numbers.",
+      "One vertical rail with a station mark at every section heading.",
+      "One arrival sequence; reduced motion lands everything in its final state."
+    ],
+    "rules": [
+      {
+        "name": "The Legend Rule",
+        "body": "Each of the six wavelengths is bound to one stage meaning for the whole site. An item that is not one of those stages takes a neutral mark (Muted Ink dot, uncolored heading). Color is never assigned by list position, index, or to create variety.",
+        "section": "colors"
+      },
+      {
+        "name": "The White Light Rule",
+        "body": "Everything the visitor operates is white light: the primary action, the focus ring, the caret, the selection. Wavelengths never fill, outline or tint a control; they are what the system does with the action, not the action.",
+        "section": "colors"
+      },
+      {
+        "name": "The Dispersion Exception",
+        "body": "The full spectrum may appear together only as dispersion, always in canonical order: the prism's edge stroke, the nameplate bar in the navigation, the beam descending the case-study path, the hairline that closes the page. The hero's spectral field (large blurred wavelength glows at 24 to 30% alpha under 64px blur) is the material the glass refracts and lives only behind the hero bench.",
+        "section": "colors"
+      },
+      {
+        "name": "The Measured Value Rule",
+        "body": "Martian Mono is only for values that start with a digit, decided by `isMeasured` (`/^\\d/`) in lib/content.ts. Everything else, including stack names and prose values in the same table, is Archivo.",
+        "section": "typography"
+      },
+      {
+        "name": "The Engraving Rule",
+        "body": "Labels are narrowed Archivo (font-stretch 80%, +0.02em), never small caps, never uppercase tracking, and never a kicker line above a heading.",
+        "section": "typography"
+      },
+      {
+        "name": "The Only Glass Rule",
+        "body": "Glass is the sole raised material. Containers that are not optical plates stay flat on the bench and separate with hairlines.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Prefix-First Rule",
+        "body": "Every backdrop filter declares `-webkit-backdrop-filter` before `backdrop-filter`. In the reverse order, Lightning CSS (Tailwind v4's processor) emits only the prefixed form, Chrome ignores it, and the glass silently loses its blur.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Opaque Bar Rule",
+        "body": "The fixed navigation is glass with a near-opaque bench tint (82% to 68%), because light content and white buttons pass beneath it; transparent glass there puts white text on white.",
+        "section": "elevation"
+      },
+      {
+        "name": "The One Arrival Rule",
+        "body": "There is one orchestrated motion, the beam's arrival. Nothing else animates on scroll or on its own; later motion answers the pointer.",
+        "section": "components"
+      },
+      {
+        "name": "The Wrapper Rule",
+        "body": "An element running `arrive-flare` (or any arrival keyframe ending in `transform: none`) never also carries a layout or interaction transform. Wrap it: position on the outer layer, arrive on the middle layer, refract or drift on the inner one. The animation's final state otherwise overrides the inline transform.",
+        "section": "components"
+      },
+      {
+        "name": "The Still Bench Rule",
+        "body": "Under `prefers-reduced-motion: reduce`, arrival and drift animations are removed with elements at full opacity and final position, transitions collapse to 0.01ms, and smooth scrolling turns off.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do bind a wavelength only to its stage: inbound message and channel, retrieval, resolved answer, scheduling, human handoff, isolation and security.",
+      "Do give an item with no stage meaning a neutral Muted Ink mark and an uncolored heading.",
+      "Do make every control White Light: primary fill, 2px focus outline offset 3px, caret, selection at 22% white.",
+      "Do set a value in Martian Mono with tabular numerals only when it starts with a digit; set everything else in Archivo.",
+      "Do set labels as engraved Archivo (font-stretch 80%, +0.02em) in sentence case.",
+      "Do hang every section from the one rail with a station mark at its heading.",
+      "Do declare `-webkit-backdrop-filter` before `backdrop-filter` on every glass surface.",
+      "Do give fixed or overlapping glass a near-opaque bench tint so its text survives whatever passes beneath.",
+      "Do wrap an arriving element instead of stacking its arrival animation with a positioning or refraction transform.",
+      "Do encode rank by area and use ruled specification rows for evidence."
+    ],
+    "donts": [
+      "Don't assign wavelengths by list position, index or for variety, and don't use them to fill, border or tint buttons, links or inputs.",
+      "Don't show all six wavelengths together except as canonical-order dispersion.",
+      "Don't use Martian Mono for words, stack names or prose values.",
+      "Don't add kickers, eyebrows or uppercase tracked labels above headings.",
+      "Don't raise anything that is not an optical glass plate; separate flat content with hairlines.",
+      "Don't add a second vertical axis, scroll-triggered reveals or a second orchestrated animation.",
+      "Don't put `overflow-x` clipping on body; clip the section that overflows.",
+      "Don't make a design rule depend on the embeddable chat widget."
+    ]
+  }
+}

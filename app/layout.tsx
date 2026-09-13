@@ -1,61 +1,75 @@
 import type { Metadata } from "next";
-import { Inter, DM_Mono } from "next/font/google";
+import { Archivo, Martian_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+/* Archivo lleva rótulo y cuerpo; el eje de ancho da los rótulos grabados
+   del instrumento sin recurrir a versalitas. */
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
   display: "swap",
+  axes: ["wdth"],
 });
 
-const dmMono = DM_Mono({
-  variable: "--font-dm-mono",
+/* Martian Mono solo para valores medidos: cifras, dimensiones, conteos. */
+const martianMono = Martian_Mono({
+  variable: "--font-martian",
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://diegojaramillo.netlify.app"),
-  title: "Diego Jaramillo — Backend Developer & AI Integration Specialist",
+  title: "Diego Jaramillo — Sistemas de IA en producción",
   description:
-    "Backend Developer specialized in Python, FastAPI, and AI integrations. Available for freelance projects. WhatsApp chatbots, REST APIs, OpenAI/Claude integrations.",
+    "CTO de IKONICO. Construyo asistentes de IA, backends e integraciones que quedan corriendo en producción: WhatsApp Cloud API, RAG sobre pgvector, NestJS y FastAPI. Medellín, Colombia.",
   keywords: [
+    "desarrollador backend",
+    "asistentes de IA",
+    "WhatsApp Cloud API",
+    "RAG",
+    "pgvector",
+    "NestJS",
+    "FastAPI",
+    "MCP",
+    "Claude",
+    "machine learning",
+    "Medellín",
+    "Colombia",
     "backend developer",
-    "python developer",
-    "fastapi",
-    "ai chatbot",
-    "openai integration",
-    "claude api",
-    "freelance developer",
-    "whatsapp bot",
-    "web scraping",
-    "automation",
-    "colombia",
-    "medellín",
+    "AI integration",
   ],
   authors: [{ name: "Diego Jaramillo" }],
+  alternates: {
+    canonical: "/",
+    languages: { es: "/", en: "/" },
+  },
   openGraph: {
     type: "website",
-    locale: "en_US",
-    title: "Diego Jaramillo — Backend Developer & AI Integration Specialist",
+    locale: "es_CO",
+    alternateLocale: "en_US",
+    title: "Diego Jaramillo — Sistemas de IA en producción",
     description:
-      "Backend Developer specialized in Python, FastAPI, and AI integrations. Available for freelance.",
-    siteName: "Diego Jaramillo Portfolio",
+      "CTO de IKONICO. Asistentes de IA, backends e integraciones que quedan corriendo en producción.",
+    siteName: "Diego Jaramillo",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Diego Jaramillo — Backend Developer & AI Integration Specialist",
+    title: "Diego Jaramillo — Sistemas de IA en producción",
     description:
-      "Backend Developer specialized in Python, FastAPI, and AI integrations. Available for freelance.",
+      "CTO de IKONICO. Asistentes de IA, backends e integraciones que quedan corriendo en producción.",
   },
   robots: { index: true, follow: true },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" className={`${inter.variable} ${dmMono.variable}`}>
+    <html lang="es" className={`${archivo.variable} ${martianMono.variable}`}>
       <body>
         {children}
         {/* Asistente de IKONICO AI. El widget crea su propio iframe flotante;

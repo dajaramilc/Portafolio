@@ -1,113 +1,49 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { MapPin, GraduationCap, Briefcase, Globe, Zap } from "lucide-react";
-
-const quickFacts = [
-  { icon: MapPin,          text: "Based in Medellín, Colombia (GMT-5)", color: "#22d3ee" },
-  { icon: GraduationCap,   text: "Systems Engineering @ EAFIT",          color: "#a78bfa" },
-  { icon: Briefcase,       text: "Available for freelance projects",      color: "#34d399" },
-  { icon: Globe,           text: "English · Spanish · French",            color: "#fb923c" },
-  { icon: Zap,             text: "Avg response time: under 4 hours",      color: "#22d3ee" },
-];
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
+import Section from "@/components/Section";
+import { useLang } from "@/components/LanguageProvider";
 
 export default function About() {
+  const { t } = useLang();
+
   return (
-    <section id="about" className="py-28 px-6" style={{ backgroundColor: "#050d1a" }}>
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={fadeUp}
-          className="mb-16"
-        >
-          <span
-            className="text-xs font-mono tracking-[0.2em] uppercase block mb-3"
-            style={{ color: "#22d3ee" }}
-          >
-            01 / About
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">About Me</h2>
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
-          {/* Text */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
-            className="lg:col-span-3 space-y-5"
-          >
-            {[
-              <>
-                I&apos;m a Systems Engineering student at{" "}
-                <span className="text-white font-medium">
-                  Universidad EAFIT (Medellín, Colombia)
-                </span>{" "}
-                with a strong background in software programming from SENA. I specialize in
-                building backend systems and integrating AI into real-world business solutions.
-              </>,
-              <>
-                Over the past year, I&apos;ve built production-ready applications including a
-                hybrid messaging platform, an AI-powered job search engine, and an agricultural
-                auctions platform with generative AI. I&apos;ve worked directly with companies
-                like{" "}
-                <span className="text-white font-medium">Magneto Empleos</span> on real client
-                projects.
-              </>,
-              <>
-                My focus is delivering clean, documented, production-grade code — and being the
-                kind of developer clients actually want to work with again.
-              </>,
-            ].map((para, i) => (
-              <motion.p
-                key={i}
-                variants={fadeUp}
-                className="text-base leading-relaxed"
-                style={{ color: "#94a3b8" }}
-              >
-                {para}
-              </motion.p>
-            ))}
-          </motion.div>
-
-          {/* Quick facts card */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            variants={{ ...fadeUp, visible: { ...fadeUp.visible, transition: { duration: 0.6, delay: 0.15 } } }}
-            className="lg:col-span-2"
-          >
-            <div
-              className="rounded-2xl p-6 border"
-              style={{ backgroundColor: "#081222", borderColor: "rgba(255,255,255,0.06)" }}
+    <Section id="about" heading={t.about.heading}>
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-16">
+        <div className="space-y-5">
+          {t.about.paragraphs.map((paragraph, i) => (
+            <p
+              key={i}
+              className="max-w-[68ch] text-[1rem] leading-[1.7]"
+              style={{ color: i === 0 ? "var(--ink)" : "var(--ink-soft)" }}
             >
-              <p className="text-xs font-mono font-medium mb-5" style={{ color: "#22d3ee" }}>
-                Quick Facts
-              </p>
-              <ul className="space-y-4">
-                {quickFacts.map(({ icon: Icon, text, color }) => (
-                  <li key={text} className="flex items-start gap-3">
-                    <Icon size={14} className="mt-0.5 shrink-0" style={{ color }} />
-                    <span className="text-sm" style={{ color: "#94a3b8" }}>
-                      {text}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
+              {paragraph}
+            </p>
+          ))}
         </div>
+
+        {/* Valores medidos del instrumento, no tarjetas con iconos. */}
+        <dl className="self-start">
+          {t.about.facts.map((fact, i) => (
+            <div
+              key={fact.label}
+              className="flex items-baseline justify-between gap-4 py-3"
+              style={{
+                borderTop: i === 0 ? "none" : "1px solid var(--rule-soft)",
+              }}
+            >
+              <dt
+                className="engraved shrink-0 text-[0.72rem]"
+                style={{ color: "var(--ink-mute)" }}
+              >
+                {fact.label}
+              </dt>
+              <dd className="text-right text-[0.82rem] text-[var(--ink)]">
+                {fact.value}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
-    </section>
+    </Section>
   );
 }

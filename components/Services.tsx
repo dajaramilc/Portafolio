@@ -1,97 +1,59 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Bot, Code2, Cpu, Zap } from "lucide-react";
-
-const services = [
-  {
-    icon: Bot,
-    title: "AI Chatbots",
-    color: "#22d3ee",
-    description:
-      "WhatsApp, Telegram, or web chatbots powered by OpenAI or Claude. Custom-trained for your business with memory, integrations, and multilingual support.",
-  },
-  {
-    icon: Code2,
-    title: "REST APIs & Backend",
-    color: "#a78bfa",
-    description:
-      "Production-ready APIs with FastAPI or Flask. Authentication, database design, file handling, third-party integrations. Clean, documented, scalable.",
-  },
-  {
-    icon: Cpu,
-    title: "AI Integrations",
-    color: "#34d399",
-    description:
-      "OpenAI, Claude, Gemini, vector embeddings, semantic search, RAG systems. I help you add intelligence to your existing product.",
-  },
-  {
-    icon: Zap,
-    title: "Automation & Scraping",
-    color: "#fb923c",
-    description:
-      "Custom Python scripts to scrape data, automate workflows, integrate APIs, or migrate data between systems. Save hours of manual work.",
-  },
-];
+import Section from "@/components/Section";
+import { SPECTRUM } from "@/lib/content";
+import { useLang } from "@/components/LanguageProvider";
 
 export default function Services() {
-  return (
-    <section id="services" className="py-28 px-6" style={{ backgroundColor: "#081222" }}>
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
-          <span className="text-xs font-mono tracking-[0.2em] uppercase block mb-3" style={{ color: "#22d3ee" }}>
-            04 / Services
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">What I Can Build For You</h2>
-        </motion.div>
+  const { t } = useLang();
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {services.map(({ icon: Icon, title, color, description }, i) => (
-            <motion.div
-              key={title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group p-7 rounded-2xl border transition-all duration-300 hover:-translate-y-1"
-              style={{ backgroundColor: "#050d1a", borderColor: "rgba(255,255,255,0.06)" }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = `${color}28`;
-                e.currentTarget.style.boxShadow = `0 12px 36px ${color}0a`;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)";
-                e.currentTarget.style.boxShadow = "none";
+  return (
+    <Section id="services" heading={t.services.heading} lead={t.services.lead}>
+      <ul>
+        {t.services.items.map((item, i) => {
+          /* Color solo si el servicio es una etapa de la leyenda. */
+          const w = item.wavelength ? SPECTRUM[item.wavelength] : null;
+          return (
+            <li
+              key={item.title}
+              className="grid grid-cols-1 gap-x-10 gap-y-2 py-6 sm:grid-cols-[minmax(0,19rem)_minmax(0,1fr)]"
+              style={{
+                borderTop: i === 0 ? "none" : "1px solid var(--rule-soft)",
               }}
             >
-              <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                style={{ backgroundColor: `${color}12` }}
+              <h3 className="flex items-start gap-3 text-[1rem] font-semibold leading-snug">
+                <span
+                  aria-hidden
+                  className="mt-[0.45em] h-[7px] w-[7px] shrink-0 rounded-full"
+                  style={
+                    w
+                      ? { background: w, boxShadow: `0 0 0 3px ${w}1f` }
+                      : {
+                          background: "var(--ink-mute)",
+                          boxShadow: "0 0 0 3px rgba(154,168,196,0.12)",
+                        }
+                  }
+                />
+                {item.title}
+              </h3>
+              <p
+                className="max-w-[64ch] text-[0.92rem] leading-[1.65] sm:pt-px"
+                style={{ color: "var(--ink-soft)" }}
               >
-                <Icon size={22} style={{ color }} />
-              </div>
-              <h3 className="text-lg font-bold text-white mb-3">{title}</h3>
-              <p className="text-sm leading-relaxed mb-6" style={{ color: "#64748b" }}>
-                {description}
+                {item.body}
               </p>
-              <a
-                href="#contact"
-                className="text-sm font-semibold transition-opacity duration-200 hover:opacity-70"
-                style={{ color }}
-              >
-                Let&apos;s talk →
-              </a>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
+            </li>
+          );
+        })}
+      </ul>
+
+      <a
+        href="#contact"
+        className="mt-10 inline-block rounded-full border px-6 py-3 text-sm font-semibold transition-colors duration-200 hover:bg-white/[0.06]"
+        style={{ borderColor: "var(--rule)", color: "var(--ink)" }}
+      >
+        {t.services.cta}
+      </a>
+    </Section>
   );
 }

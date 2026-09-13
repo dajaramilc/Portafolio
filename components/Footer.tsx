@@ -1,49 +1,68 @@
+"use client";
+
 import { Github, Linkedin, Mail } from "lucide-react";
+import { SPECTRUM, WAVELENGTH_ORDER } from "@/lib/content";
+import { useLang } from "@/components/LanguageProvider";
+
+const LINKS = [
+  {
+    icon: Github,
+    href: "https://github.com/dajaramilc",
+    label: "GitHub",
+  },
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/diegojaramilloo/",
+    label: "LinkedIn",
+  },
+  {
+    icon: Mail,
+    href: "mailto:diegojaramillocalderon@gmail.com",
+    label: "Email",
+  },
+];
 
 export default function Footer() {
+  const { t } = useLang();
+
   return (
-    <footer
-      className="py-10 px-6 border-t"
-      style={{ backgroundColor: "#081222", borderColor: "rgba(255,255,255,0.05)" }}
-    >
-      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5">
-        <p className="text-xs text-center sm:text-left text-slate-700">
-          Built with Next.js + Tailwind CSS · Designed &amp; developed by Diego Jaramillo · © 2026
+    <footer className="px-5 sm:px-8">
+      {/* El espectro cierra la página: el haz se acaba aquí. */}
+      <div
+        className="mx-auto h-px max-w-[78rem]"
+        style={{
+          background: `linear-gradient(to right, ${WAVELENGTH_ORDER.map(
+            (w) => `${SPECTRUM[w]}55`,
+          ).join(", ")})`,
+        }}
+      />
+      <div className="mx-auto flex max-w-[78rem] flex-col items-center justify-between gap-5 py-9 sm:flex-row">
+        <p className="text-[0.75rem]" style={{ color: "var(--ink-mute)" }}>
+          {t.footer.built} · © {new Date().getFullYear()}
         </p>
 
         <div className="flex items-center gap-5">
-          <a
-            href="https://github.com/dajaramilc"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="text-slate-600 hover:text-white transition-colors duration-200"
-          >
-            <Github size={18} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/diegojaramilloo/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className="text-slate-600 hover:text-white transition-colors duration-200"
-          >
-            <Linkedin size={18} />
-          </a>
-          <a
-            href="mailto:diegojaramillocalderon@gmail.com"
-            aria-label="Email"
-            className="text-slate-600 hover:text-white transition-colors duration-200"
-          >
-            <Mail size={18} />
-          </a>
+          {LINKS.map(({ icon: Icon, href, label }) => (
+            <a
+              key={label}
+              href={href}
+              target={href.startsWith("http") ? "_blank" : undefined}
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="transition-colors duration-200 hover:!text-[var(--ink)]"
+              style={{ color: "var(--ink-mute)" }}
+            >
+              <Icon size={17} />
+            </a>
+          ))}
         </div>
 
         <a
-          href="#"
-          className="text-xs font-mono text-slate-700 hover:text-cyan-400 transition-colors duration-200 hidden sm:block"
+          href="#home"
+          className="text-[0.75rem] transition-colors duration-200 hover:text-[var(--ink-soft)]"
+          style={{ color: "var(--ink-mute)" }}
         >
-          Back to top ↑
+          {t.footer.top}
         </a>
       </div>
     </footer>

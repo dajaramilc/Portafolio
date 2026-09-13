@@ -39,3 +39,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# impeccable: capturas y estado de build son desechables; los hooks por
+# herramienta llevan rutas absolutas de esta máquina. PRODUCT.md, DESIGN.md y
+# .impeccable/surfaces/ SÍ se versionan: son el contexto que reusa la skill.
+.impeccable/review/
+.impeccable/build/
+.claude/settings.local.json
+.codex/
+.cursor/
+.grok/
+
+# continuidad entre sesiones, nunca se commitea
+context.md
