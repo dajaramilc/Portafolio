@@ -402,7 +402,6 @@ const es: Copy = {
           "Tool calling y reglas de comportamiento",
           "Defensa contra inyección de prompt",
           "Embeddings ejecutados en local, sin costo por consulta",
-          "Semillero de investigación en machine learning, EAFIT",
         ],
       },
       {
@@ -554,7 +553,7 @@ const en: Copy = {
     capabilities: "Capabilities",
     services: "Services",
     contact: "Contact",
-    cta: "Write to me",
+    cta: "Contact me",
     menu: "Open menu",
     langLabel: "Language",
   },
@@ -785,7 +784,6 @@ const en: Copy = {
           "Tool calling and behavior-rule systems",
           "Prompt-injection defense",
           "Embeddings run locally, at no cost per query",
-          "Machine-learning research seedbed, EAFIT",
         ],
       },
       {
