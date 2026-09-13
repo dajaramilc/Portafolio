@@ -39,7 +39,7 @@ He leads rather than executes tickets: he chooses the architecture, decides what
 
 **Required behavior:**
 
-- The site must be bilingual, Spanish and English, with a language switch in the top navigation. Language choice persists across the visit.
+- The site must be bilingual, Spanish and English, with a language switch in the top navigation. **English is the default** for any visitor without a saved choice, including the server render, metadata, and link preview (decided by Diego 2026-09-13). Language choice persists across visits.
 - **The site copy never mentions the embeddable web chat** (confirmed by Diego 2026-09-13). The IKONICO AI chat widget still loads from `app/layout.tsx` via `next/script`, but Diego plans to remove it, so no claim, section, or capability may depend on it. While it remains, its script `id` (`ikonico-chat-script`) is load-bearing — see the README.
 - Must stay fast and accessible: keyboard focus visible, reduced motion respected, readable contrast, responsive to phone width.
 

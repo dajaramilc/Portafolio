@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Diego Jaramillo — Sistemas de IA en producción";
+export const alt = "Diego Jaramillo — AI systems in production";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -49,7 +49,7 @@ export default function OpengraphImage() {
               letterSpacing: "0.02em",
             }}
           >
-            Entra un mensaje
+            A message arrives
           </div>
           <div style={{ color: "#3A465E", fontSize: 18 }}>WhatsApp</div>
         </div>
@@ -65,7 +65,7 @@ export default function OpengraphImage() {
               maxWidth: 960,
             }}
           >
-            Construyo los sistemas que responden por tu negocio.
+            I build the systems that answer for your business.
           </div>
 
           <div
@@ -80,7 +80,7 @@ export default function OpengraphImage() {
               Diego Jaramillo
             </div>
             <div style={{ fontSize: 22, color: "#5F6D8A" }}>
-              CTO de IKONICO · Medellín, Colombia
+              CTO at IKONICO · Medellín, Colombia
             </div>
           </div>
         </div>
@@ -88,9 +88,9 @@ export default function OpengraphImage() {
         {/* Los tres detectores */}
         <div style={{ display: "flex", gap: 14 }}>
           {[
-            { label: "Responde", color: SPECTRUM.resolve },
-            { label: "Agenda", color: SPECTRUM.schedule },
-            { label: "Pasa a un humano", color: SPECTRUM.handoff },
+            { label: "It answers", color: SPECTRUM.resolve },
+            { label: "It books", color: SPECTRUM.schedule },
+            { label: "It hands off", color: SPECTRUM.handoff },
           ].map((plate) => (
             <div
               key={plate.label}

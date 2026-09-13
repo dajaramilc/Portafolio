@@ -21,9 +21,9 @@ const martianMono = Martian_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://diegojaramillo.netlify.app"),
-  title: "Diego Jaramillo — Sistemas de IA en producción",
+  title: "Diego Jaramillo — AI systems in production",
   description:
-    "CTO de IKONICO. Construyo asistentes de IA, backends e integraciones que quedan corriendo en producción: WhatsApp Cloud API, RAG sobre pgvector, NestJS y FastAPI. Medellín, Colombia.",
+    "CTO at IKONICO. I build AI assistants, backends, and integrations that stay running in production: WhatsApp Cloud API, RAG over pgvector, NestJS and FastAPI. Medellín, Colombia.",
   keywords: [
     "desarrollador backend",
     "asistentes de IA",
@@ -47,18 +47,18 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "es_CO",
-    alternateLocale: "en_US",
-    title: "Diego Jaramillo — Sistemas de IA en producción",
+    locale: "en_US",
+    alternateLocale: "es_CO",
+    title: "Diego Jaramillo — AI systems in production",
     description:
-      "CTO de IKONICO. Asistentes de IA, backends e integraciones que quedan corriendo en producción.",
+      "CTO at IKONICO. AI assistants, backends, and integrations that stay running in production.",
     siteName: "Diego Jaramillo",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Diego Jaramillo — Sistemas de IA en producción",
+    title: "Diego Jaramillo — AI systems in production",
     description:
-      "CTO de IKONICO. Asistentes de IA, backends e integraciones que quedan corriendo en producción.",
+      "CTO at IKONICO. AI assistants, backends, and integrations that stay running in production.",
   },
   robots: { index: true, follow: true },
 };
@@ -69,7 +69,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={`${archivo.variable} ${martianMono.variable}`}>
+    <html lang="en" className={`${archivo.variable} ${martianMono.variable}`}>
       <body>
         {children}
         {/* Asistente de IKONICO AI. El widget crea su propio iframe flotante;

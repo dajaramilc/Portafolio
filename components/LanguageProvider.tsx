@@ -30,14 +30,15 @@ function getSnapshot(): Lang {
   if (memoryLang) return memoryLang;
   const stored = readStored();
   if (stored) return stored;
-  /* Sin preferencia guardada, manda el idioma del navegador. */
-  return navigator.language?.toLowerCase().startsWith("es") ? "es" : "en";
+  /* Sin preferencia guardada, el sitio va en inglés (decisión de Diego). */
+  return "en";
 }
 
-/* El servidor siempre renderiza en español, así que la hidratación cuadra;
-   React cambia al idioma guardado justo después. */
+/* El servidor siempre renderiza en inglés, el idioma por defecto, así que
+   la hidratación cuadra; si el visitante eligió español, React cambia justo
+   después. */
 function getServerSnapshot(): Lang {
-  return "es";
+  return "en";
 }
 
 function subscribe(onChange: () => void) {
